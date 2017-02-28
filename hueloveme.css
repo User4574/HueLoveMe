@@ -1,0 +1,13 @@
+div#container {
+  width: 500px;
+}
+
+div.square {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+.locked {
+  background: url('dot.png');
+}

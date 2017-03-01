@@ -64,7 +64,7 @@ function makeDraggable() {
       $(ui.draggable).clone().replaceAll(this);
       $(this).replaceAll(ui.draggable);
       makeDraggable();
-      //checkWin();
+      checkWin();
     }
   })
 }
@@ -76,9 +76,14 @@ function gridByIndex(i) {
 }
 
 function checkWin() {
+  var a = $.map($('.square'), function(i) {
+    return i.id;
+  });
+
   var win = true;
-  
-  //Do some kind of check
+
+  for(var i = 0; i < rows*cols ; i++)
+    if(a[i] != ("" + i)) win = false;
 
   if(win) {
     $('.square:not(.locked)').draggable('destroy');
